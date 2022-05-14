@@ -3,6 +3,12 @@ import React from 'react';
 
 import Questions from './ChooseQuestions';
 
+import logo from '../Assets/IMG/logo.png'
+
+import party from '../Assets/IMG/party.png'
+
+import sad from '../Assets/IMG/sad.png'
+
 
 export default function OpenQuestions({objct}) {
 
@@ -25,7 +31,7 @@ export default function OpenQuestions({objct}) {
                 return (
                     <>
                         <div className="resultado">
-                            <img src="./IMG/party.png" />
+                            <img src={party} />
                             <h3>Parabéns!</h3>
                         </div>
                         <h3>Você não esqueceu de nenhum flashcard!</h3>
@@ -36,7 +42,7 @@ export default function OpenQuestions({objct}) {
                 return (
                     <>
                         <div className="resultado">
-                            <img src="./IMG/sad.png" />
+                            <img src={sad} />
                             <h3>Putz!</h3>
                         </div>
                         <h3>Ainda faltam alguns...
@@ -71,7 +77,7 @@ export default function OpenQuestions({objct}) {
         <>
             <div className="page-questions">
                 <div className="top-questions">
-                    <img src="./IMG/logo.png" />
+                    <img src={logo} />
                     <h1>ZapRecall</h1>
                 </div>
 

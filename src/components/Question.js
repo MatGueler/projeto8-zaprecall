@@ -1,3 +1,4 @@
+import setinha from '../Assets/IMG/setinha.png'
 export default function Question({ index, indexSel, correction, setResp, question, questionSel }) {
 
     // Função que seta o parametro para respostas
@@ -63,7 +64,7 @@ export default function Question({ index, indexSel, correction, setResp, questio
                 <div className="card">
                     <div className="answer front">
                         <h2>{question}</h2>
-                        <img src="./IMG/setinha.png" onClick={selectorAnswer} />
+                        <img src={setinha} onClick={selectorAnswer} />
                     </div>
                 </div>
             )

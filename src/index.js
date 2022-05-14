@@ -1,8 +1,9 @@
 import ReactDOM from "react-dom";
-
 import React from 'react';
-
 import OpenQuestions from "./components/QuestionsPage";
+import './Assets/CSS/reset.css'
+import './Assets/CSS/style.css'
+import logo from './Assets/IMG/logo.png'
 
 function InitialPage(props) {
     const [page, setPage] = React.useState(props.page)
@@ -35,7 +36,7 @@ function InitialPage(props) {
             <div className="background-page-initial">
 
                 <div className="initial-menu">
-                    <img src="./IMG/logo.png" />
+                    <img src={logo} />
                     <h1>ZapRecall</h1>
                     <button onClick={() => setPage('QuestionsPage')}>Iniciar Recall</button>
                 </div>
