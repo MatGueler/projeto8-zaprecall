@@ -10,7 +10,7 @@ import party from '../Assets/IMG/party.png'
 import sad from '../Assets/IMG/sad.png'
 
 
-export default function OpenQuestions({objct}) {
+export default function OpenQuestions({ objct, setPage }) {
 
     const [result, setResult] = React.useState([])
 
@@ -18,12 +18,20 @@ export default function OpenQuestions({objct}) {
 
     const [base, setBase] = React.useState('base')
 
+    const [boxQuestions, setboxQuestions] = React.useState('questions')
+
     const [pontuation, setPontuation] = React.useState(0)
 
+
+    // pode ser um componente
     function Finish() {
         if (result.length !== 8) {
             return (
-                <></>
+                <><h3>{result.length}/8 CONCLUÍDOS</h3>
+                    <div className="icons-result">
+                        {result.map(function (element, index, result) { return (<IconsResult key={index} element={element} />) })}
+                    </div>
+                </>
             )
         }
         else {
@@ -35,6 +43,11 @@ export default function OpenQuestions({objct}) {
                             <h3>Parabéns!</h3>
                         </div>
                         <h3>Você não esqueceu de nenhum flashcard!</h3>
+                        <h3>{result.length}/8 CONCLUÍDOS</h3>
+                        <div className="icons-result">
+                            {result.map(function (element, index, result) { return (<IconsResult key={index} element={element} />) })}
+                        </div>
+                        <button onClick={() => setPage('initial')}>REINICIAR RECALL</button>
                     </>
                 )
             }
@@ -43,10 +56,15 @@ export default function OpenQuestions({objct}) {
                     <>
                         <div className="resultado">
                             <img src={sad} />
-                            <h3>Putz!</h3>
+                            <h3>Putz...</h3>
                         </div>
                         <h3>Ainda faltam alguns...
                             Mas não desanime!</h3>
+                        <h3>{result.length}/8 CONCLUÍDOS</h3>
+                        <div className="icons-result">
+                            {result.map(function (element, index, result) { return (<IconsResult key={index} element={element} />) })}
+                        </div>
+                        <button onClick={() => setPage('initial')}>REINICIAR RECALL</button>
                     </>
                 )
             }
@@ -82,16 +100,12 @@ export default function OpenQuestions({objct}) {
                 </div>
 
 
-                <div className="questions done">
-                    {objct.map(function (element, index) { return (<Questions key={index} question={element.question} index={index} answer={element.answer} resp={resp} setResp={setResp} result={result} setResult={setResult} setBase={setBase} setPontuation={setPontuation}/>) })}
+                <div className={boxQuestions}>
+                    {objct.map(function (element, index) { return (<Questions key={index} question={element.question} index={index} answer={element.answer} resp={resp} setResp={setResp} result={result} setResult={setResult} setBase={setBase} setPontuation={setPontuation} setboxQuestions={setboxQuestions}/>) })}
                 </div>
 
                 <div className={base}>
                     <Finish />
-                    <h3>{result.length}/8 CONCLUÍDOS</h3>
-                    <div className="icons-result">
-                        {result.map(function (element, index, result) { return (<IconsResult key={index} element={element} />) })}
-                    </div>
                 </div>
             </div>
         </>

@@ -3,7 +3,7 @@ import Correction from './Correction';
 import Question from './Question';
 
 
-export default function Questions({ question, index, answer, resp, setResp, result, setResult, setBase, setPontuation }) {
+export default function Questions({ question, index, answer, resp, setResp, result, setResult, setBase, setPontuation, setboxQuestions}) {
 
     const [indexSel, setIndexSel] = React.useState('')
     const [questionSel, setQuestionSel] = React.useState('')
@@ -56,6 +56,7 @@ export default function Questions({ question, index, answer, resp, setResp, resu
         }
         if (result.length === 8) {
             setBase('base done')
+            setboxQuestions('questions done')
         }
         setResp('correction')
     }

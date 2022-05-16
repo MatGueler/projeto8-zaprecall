@@ -8,6 +8,8 @@ import logo from './Assets/IMG/logo.png'
 function InitialPage(props) {
     const [page, setPage] = React.useState(props.page)
 
+    const [qtd, setQtd] = React.useState(prompt('quaantidade de perguntas'))
+
     function comparador() { 
         return Math.random() - 0.5; 
     }
@@ -48,7 +50,7 @@ function InitialPage(props) {
         objct.sort(comparador)
         return (
             <>
-                <OpenQuestions objct={objct} />
+                <OpenQuestions objct={objct} setPage={setPage} />
             </>
         )
     }

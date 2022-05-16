@@ -8,6 +8,10 @@ body {
     font-family: 'Righteous', cursive;
 }
 
+ion-icon{
+    font-size: 30px;
+}
+
 
 /* PAGINA INICIAL */
 .background-page-initial {
@@ -85,7 +89,7 @@ body {
 }
 
 .questions.done {
-    margin-bottom: 170px;
+    margin-bottom: 250px;
 }
 
 .question {
@@ -217,7 +221,19 @@ body {
 }
 
 .base.done{
-    height: 170px;
+    height: 240px;
+}
+
+.base.done > button{
+    width: 200px;
+    height: 30px;
+    border-radius: 5px;
+    border: 0;
+    margin: 10px 0;
+    font-size: 14px;
+    font-family: 'Recursive', sans-serif;
+    color: #FFFFFF;
+    background-color: #FB6B6B;
 }
 
 .base>h3 {
@@ -231,4 +247,16 @@ body {
 
 .icons-result{
     display: flex;
+}
+
+
+/* MEDIA DESKTOP */
+@media (min-width: 700px){
+    .questions{
+        width: 400px;
+    }
+
+    .top-questions{
+        width: 500px;
+    }
 }
