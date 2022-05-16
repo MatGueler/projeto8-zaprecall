@@ -5,13 +5,14 @@ import './Assets/CSS/reset.css'
 import './Assets/CSS/style.css'
 import logo from './Assets/IMG/logo.png'
 
+
 function InitialPage(props) {
     const [page, setPage] = React.useState(props.page)
 
-    const [qtd, setQtd] = React.useState(prompt('quaantidade de perguntas'))
+    const [qtd, setQtd] = React.useState(0)
 
-    function comparador() { 
-        return Math.random() - 0.5; 
+    function comparador() {
+        return Math.random() - 0.5;
     }
 
     let objct = [
@@ -33,6 +34,7 @@ function InitialPage(props) {
     ]
 
     if (page === 'initial') {
+
         objct.sort(comparador)
         return (
             <div className="background-page-initial">
@@ -50,7 +52,7 @@ function InitialPage(props) {
         objct.sort(comparador)
         return (
             <>
-                <OpenQuestions objct={objct} setPage={setPage} />
+                <OpenQuestions objct={objct} setPage={setPage} qtd={qtd} />
             </>
         )
     }

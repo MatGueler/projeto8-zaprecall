@@ -10,7 +10,7 @@ import party from '../Assets/IMG/party.png'
 import sad from '../Assets/IMG/sad.png'
 
 
-export default function OpenQuestions({ objct, setPage }) {
+export default function OpenQuestions({ objct, setPage , qtd}) {
 
     const [result, setResult] = React.useState([])
 
